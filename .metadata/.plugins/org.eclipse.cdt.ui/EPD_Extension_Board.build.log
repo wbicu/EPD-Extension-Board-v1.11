@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project EPD_Extension_Board ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" all 
+'Building file: ../src/Pervasive_Displays_small_EPD/EPD_COG.c'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.3/bin/cl430" -vmsp --abi=eabi --opt_for_speed=1 --include_path="C:/ti/ccsv5/ccs_base/msp430/include" --include_path="C:/ti/ccsv5/tools/compiler/msp430_4.2.3/include" --include_path="D:/Partnering for Success/Ref.Designs/Extension board/1.44 - 2.7/Code/Firmware/LaunchPad/EPD Extension Board v1.11/EPD_Extension_Board/src/EPD_Kit_Tool/Drivers" --include_path="D:/Partnering for Success/Ref.Designs/Extension board/1.44 - 2.7/Code/Firmware/LaunchPad/EPD Extension Board v1.11/EPD_Extension_Board/src" --include_path="D:/Partnering for Success/Ref.Designs/Extension board/1.44 - 2.7/Code/Firmware/LaunchPad/EPD Extension Board v1.11/EPD_Extension_Board/src/EPD_Kit_Tool" --include_path="D:/Partnering for Success/Ref.Designs/Extension board/1.44 - 2.7/Code/Firmware/LaunchPad/EPD Extension Board v1.11/EPD_Extension_Board/src/Pervasive_Displays_small_EPD" --define=__MSP430G2553__ --printf_support=minimal --preproc_with_compile --preproc_dependency="src/Pervasive_Displays_small_EPD/EPD_COG.pp" --obj_directory="src/Pervasive_Displays_small_EPD"  "../src/Pervasive_Displays_small_EPD/EPD_COG.c"
+'Finished building: ../src/Pervasive_Displays_small_EPD/EPD_COG.c'
+' '
+'Building target: EPD_Extension_Board.out'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv5/tools/compiler/msp430_4.2.3/bin/cl430" -vmsp --abi=eabi --opt_for_speed=1 --define=__MSP430G2553__ --printf_support=minimal -z --heap_size=80 --stack_size=80 -i"C:/ti/ccsv5/ccs_base/msp430/include" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.3/lib" -i"C:/ti/ccsv5/tools/compiler/msp430_4.2.3/include" --reread_libs --warn_sections --xml_link_info="EPD_Extension_Board_linkInfo.xml" --rom_model -o "EPD_Extension_Board.out"  "./src/EPD_Kit_Tool/Drivers/Uart_Driver.obj" "./src/EPD_Kit_Tool/Drivers/EPD_LED.obj" "./src/EPD_Kit_Tool/Uart_Controller.obj" "./src/EPD_Kit_Tool/Mem_Flash.obj" "./src/EPD_Kit_Tool/EPD_Kit_Tool_Process.obj" "./src/EPD_Kit_Tool/Char.obj" "./src/Pervasive_Displays_small_EPD/EPD_hardware_gpio.obj" "./src/Pervasive_Displays_small_EPD/EPD_hardware_driver.obj" "./src/Pervasive_Displays_small_EPD/EPD_controller.obj" "./src/Pervasive_Displays_small_EPD/EPD_COG.obj" "./src/main.obj" "./src/image_data.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: EPD_Extension_Board.out'
+' '
+
+**** Build Finished ****

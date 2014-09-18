@@ -1,0 +1,30 @@
+﻿/**
+ * \page Change History
+ *
+ * The following is a summary of the changes made to the MSP430 LaunchPad with EPD Extension Kit.
+ * The changes are listed with the most recent first.
+ * - <b>Version 1.11 - 12 Feb, 2014</b>\n
+ *   -# Upgrade CCS compiler from v4.2.2 to v4.2.3
+ *   -# Check Flash is busy before any access (Mem_Flash.c)
+ *   -# Adjust the block size of 2.7" (EPD_COG_process_v230_G2.c)
+ *   -# Use the 1st image array for V230 G2 2.7" EPD only if running without EPD Kit Tool due to exceed code size of MSP430
+ *   -# Fixed turning on OE command to (0x02, 0x07) in dummy_line function in EPD_COG_process_v230_G2.c
+ * - <b>Version 1.10 - 7 Feb, 2014</b>\n
+ *   -# Added new G2 COG driving waveform code to support V230 EPD for 2" and 2.7"
+ *   -# Disabled the ASCII partial update function when connecting with V230 G2 EPD and working with EPD Kit Tool
+ *      due to G2 hasn't supported partial update yet(7Feb'14).
+ * - <b>Version 1.01 - 14 Nov, 2013</b>\n
+ *   -# Upgraded compiler version to v4.2.2 on CCS v5.5
+ *   -# Removed the default NULL static of _On_EPD_read_flash (CCS v5.5 doesn't work)
+ *   -# Added if(slideshow_parameter.EPD_size>EPD_270) return; code in EPD_Kit_Tool_process_init(). 
+ *      If the default EPD size of slideshow parameter is greater than EPD_270, the LaunchPad can't get connection.
+ *   -# Fixed the memory access method
+ *   -# Add "Known issue" section in quick start guide of main.c
+ * - <b>Version 1.00 - 3 Jun, 2013</b>\n
+ *   -# Separate the COG driving code into COG_V110(default), COG_V110G2(future) and COG_V230(future) structure
+ *   -# Separate the source code into two running modes: (1)image arrays, (2)EPD Kit Tool
+ *   -# Restructure code files and definitions 
+ *   -# Give detail comments in codes and generate Doxygen document
+ * - <b>Version 0.92 - 18 Feb, 2013</b>\n
+ *   -# First release of EPD Extension board with MSP430 LaunchPad kit.
+ */ 

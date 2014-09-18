@@ -1,0 +1,889 @@
+******************************************************************************
+                  MSP430 Linker PC v4.2.2                      
+******************************************************************************
+>> Linked Tue Nov 12 14:44:12 2013
+
+OUTPUT FILE NAME:   <EPD Extension Board.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000e720
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  00000128  000000d8  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  00002d4a  00001296  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000000  00000002  RWIX
+  INT03                 0000ffe6   00000002  00000000  00000002  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000000  00000002  RWIX
+  INT10                 0000fff4   00000002  00000000  00000002  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000000  00000002  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    0000c000    00000000     UNINITIALIZED
+
+.bss       0    00000200    00000106     UNINITIALIZED
+                  00000200    0000006f     (.common:COG_Line)
+                  0000026f    00000001     (.common:board_is_connected)
+                  00000270    00000026     (.common:system_packets)
+                  00000296    00000023     (.common:data_Rx_buffer)
+                  000002b9    00000001     (.common:line_count)
+                  000002ba    00000010     (.common:image_info)
+                  000002ca    00000010     (.common:tx_buf)
+                  000002da    00000004     (.common:slideshow_parameter)
+                  000002de    00000004     (.common:write_flash_address)
+                  000002e2    00000002     (.common:EPD_Counter)
+                  000002e4    00000002     (.common:_On_EPD_read_flash)
+                  000002e6    00000002     (.common:_RxEventHandle)
+                  000002e8    00000002     (.common:_receive_packets_event)
+                  000002ea    00000002     (.common:address_offset)
+                  000002ec    00000002     (.common:current_frame_time)
+                  000002ee    00000002     (.common:data_line_even)
+                  000002f0    00000002     (.common:data_line_odd)
+                  000002f2    00000002     (.common:data_line_scan)
+                  000002f4    00000002     (.common:image_count)
+                  000002f6    00000002     (.common:mark_line)
+                  000002f8    00000002     (.common:new_line)
+                  000002fa    00000002     (.common:previous_lin)
+                  000002fc    00000002     (.common:stage_time)
+                  000002fe    00000001     (.common:rest_data_count)
+                  000002ff    00000001     (.common:slideshow_index)
+                  00000300    00000001     (.common:system_packet_count)
+                  00000301    00000001     (.common:system_packet_get_index)
+                  00000302    00000001     (.common:system_packet_put_index)
+                  00000303    00000001     (.common:temp_byte$2)
+                  00000304    00000001     (.common:tx_iptr)
+                  00000305    00000001     (.common:tx_optr)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.data      0    00000306    00000002     UNINITIALIZED
+                  00000306    00000001     EPD_hardware_driver.obj (.data)
+                  00000307    00000001     Mem_Flash.obj (.data)
+
+.TI.persistent 
+*          0    00000306    00000000     UNINITIALIZED
+
+.stack     0    000003e0    00000020     UNINITIALIZED
+                  000003e0    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  000003e2    0000001e     --HOLE--
+
+.text      0    0000c000    000029c4     
+                  0000c000    00000542     EPD_Kit_Tool_Process.obj (.text:uart_command_handle)
+                  0000c542    000004a6     EPD_COG.obj (.text:stage_handle_flash)
+                  0000c9e8    000002a8     Mem_Flash.obj (.text:get_flash_image_info)
+                  0000cc90    000002a4     EPD_COG.obj (.text:stage_handle_partial_update)
+                  0000cf34    000001e4     EPD_COG.obj (.text:EPD_power_off)
+                  0000d118    00000174     Mem_Flash.obj (.text:write_ascii)
+                  0000d28c    00000114     EPD_COG.obj (.text:save_partial_image)
+                  0000d3a0    0000010a     EPD_COG.obj (.text:EPD_initialize_driver)
+                  0000d4aa    000000c0     EPD_COG.obj (.text:set_temperature_factor)
+                  0000d56a    000000a8     Mem_Flash.obj (.text:get_flash_mark_image_info)
+                  0000d612    000000a6     EPD_COG.obj (.text:EPD_display_partialupdate)
+                  0000d6b8    000000a6     Mem_Flash.obj (.text:get_slideshow_image_address)
+                  0000d75e    000000a6     Uart_Controller.obj (.text:system_packets_format_check)
+                  0000d804    000000a4     Mem_Flash.obj (.text:get_custom_image_address)
+                  0000d8a8    000000a4     EPD_Kit_Tool_Process.obj (.text:slideshow_run)
+                  0000d94c    00000090     EPD_hardware_driver.obj (.text:get_temperature)
+                  0000d9dc    00000090     main.obj (.text:set_MCU_frequency)
+                  0000da6c    00000070     Mem_Flash.obj (.text:CMD_PP)
+                  0000dadc    00000068     rts430_eabi.lib : fs_toi.obj (.text)
+                  0000db44    00000066     Mem_Flash.obj (.text:write_slideshow_parameters)
+                  0000dbaa    00000064     Mem_Flash.obj (.text:is_flash_existed)
+                  0000dc0e    00000060     Mem_Flash.obj (.text:flash_cmd_read)
+                  0000dc6e    0000005e     rts430_eabi.lib : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  0000dccc    0000005e                     : autoinit.obj (.text:_auto_init)
+                  0000dd2a    0000005e     Mem_Flash.obj (.text:read_slideshow_parameters)
+                  0000dd88    00000058     rts430_eabi.lib : div32u.obj (.text)
+                  0000dde0    00000056     EPD_Kit_Tool_Process.obj (.text:EPD_Kit_Tool_process_init)
+                  0000de36    00000056     EPD_COG.obj (.text:EPD_power_on)
+                  0000de8c    00000052     Uart_Controller.obj (.text:return_packets)
+                  0000dede    00000050     EPD_hardware_gpio.obj (.text:EPD_initialize_gpio)
+                  0000df2e    0000004e     EPD_COG.obj (.text:EPD_display_from_flash_prt)
+                  0000df7c    0000004c     EPD_Kit_Tool_Process.obj (.text:EPD_Kit_tool_process_task)
+                  0000dfc8    0000004c     EPD_controller.obj (.text:EPD_display_from_flash)
+                  0000e014    0000004c     rts430_eabi.lib : lsr16.obj (.text)
+                  0000e060    0000004a     EPD_COG.obj (.text:COG_driver_EPDtype_select)
+                  0000e0aa    0000004a     rts430_eabi.lib : fs_ltof.obj (.text)
+                  0000e0f4    00000048     EPD_hardware_driver.obj (.text:SPI_send)
+                  0000e13c    00000048     EPD_hardware_driver.obj (.text:spi_init)
+                  0000e184    00000048     main.obj (.text:system_init)
+                  0000e1cc    00000046     Mem_Flash.obj (.text:erase_image)
+                  0000e212    00000040     EPD_hardware_driver.obj (.text:PWM_run)
+                  0000e252    00000040     rts430_eabi.lib : div32s.obj (.text)
+                  0000e292    0000003e                     : asr32.obj (.text:l_asr_const)
+                  0000e2d0    0000003e                     : lsl32.obj (.text:l_lsl_const)
+                  0000e30e    0000003c     Mem_Flash.obj (.text:CMD_SE)
+                  0000e34a    0000003c     EPD_hardware_driver.obj (.text:SPI_send_byte)
+                  0000e386    0000003a     Uart_Driver.obj (.text:data_interface_init)
+                  0000e3c0    00000038     Uart_Driver.obj (.text:USCI0TX_ISR)
+                  0000e3f8    00000036     Uart_Controller.obj (.text:put_system_buffer)
+                  0000e42e    00000034     Uart_Controller.obj (.text:return_system_packets)
+                  0000e462    0000002e     Uart_Driver.obj (.text:data_transmit)
+                  0000e490    0000002c     Uart_Driver.obj (.text:USCI0RX_ISR)
+                  0000e4bc    0000002c     Uart_Controller.obj (.text:data_receive_handle)
+                  0000e4e8    0000002c     rts430_eabi.lib : div16s.obj (.text)
+                  0000e514    0000002c                     : lsl16.obj (.text)
+                  0000e540    0000002c     Mem_Flash.obj (.text:write_mark)
+                  0000e56c    00000028     EPD_controller.obj (.text:EPD_display_from_flash_Ex)
+                  0000e594    00000028     Mem_Flash.obj (.text:send_flash_address)
+                  0000e5bc    00000026     EPD_hardware_driver.obj (.text:EPD_display_hardware_init)
+                  0000e5e2    00000026     rts430_eabi.lib : mult32.obj (.text)
+                  0000e608    00000024     Uart_Controller.obj (.text:data_controller_init)
+                  0000e62c    00000022     Mem_Flash.obj (.text:CMD_CE)
+                  0000e64e    00000020     Uart_Controller.obj (.text:get_system_buffer)
+                  0000e66e    00000020     EPD_hardware_driver.obj (.text:start_EPD_timer)
+                  0000e68e    0000001e     Mem_Flash.obj (.text:CMD_RDSR)
+                  0000e6ac    0000001e     EPD_hardware_driver.obj (.text:SPI_write_ex)
+                  0000e6ca    0000001e     Uart_Controller.obj (.text:poll_system_packet_buffer)
+                  0000e6e8    0000001e     EPD_hardware_driver.obj (.text:spi_detach)
+                  0000e706    0000001a     EPD_COG.obj (.text:EPD_init)
+                  0000e720    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000e73a    00000018     EPD_hardware_driver.obj (.text:initialize_EPD_timer)
+                  0000e752    00000018     main.obj (.text:main)
+                  0000e76a    00000016     EPD_controller.obj (.text:EPD_power_init)
+                  0000e780    00000016     EPD_hardware_driver.obj (.text:delay_ms)
+                  0000e796    00000016     rts430_eabi.lib : div16u.obj (.text)
+                  0000e7ac    00000014     EPD_Kit_Tool_Process.obj (.text:check_EPD_extension_board)
+                  0000e7c0    00000014     rts430_eabi.lib : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000e7d4    00000014                     : mult16.obj (.text)
+                  0000e7e8    00000012     Mem_Flash.obj (.text:CMD_WREN)
+                  0000e7fa    00000012     EPD_hardware_driver.obj (.text:Timer_A0)
+                  0000e80c    00000012     rts430_eabi.lib : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0000e81e    00000012                     : memcpy.obj (.text:memcpy)
+                  0000e830    00000012     Uart_Controller.obj (.text:return_system_packet_result)
+                  0000e842    00000010     EPD_hardware_driver.obj (.text:SPI_read)
+                  0000e852    00000010     Mem_Flash.obj (.text:read_flash)
+                  0000e862    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  0000e872    0000000e     EPD_hardware_gpio.obj (.text:SPIMISO_low)
+                  0000e880    0000000e     EPD_hardware_driver.obj (.text:Wait_10us)
+                  0000e88e    0000000e     Uart_Controller.obj (.text:clear_system_buffer)
+                  0000e89c    0000000e     EPD_hardware_driver.obj (.text:initialize_temperature)
+                  0000e8aa    0000000e     EPD_hardware_driver.obj (.text:stop_EPD_timer)
+                  0000e8b8    0000000c     EPD_hardware_gpio.obj (.text:EPD_pwm_low)
+                  0000e8c4    0000000c     EPD_hardware_driver.obj (.text:SPI_write)
+                  0000e8d0    0000000a     Mem_Flash.obj (.text:Flash_cs_high)
+                  0000e8da    0000000a     Mem_Flash.obj (.text:Flash_cs_low)
+                  0000e8e4    0000000a     Mem_Flash.obj (.text:IsFlashBusy)
+                  0000e8ee    0000000a     EPD_LED.obj (.text:LED_init)
+                  0000e8f8    00000008     EPD_hardware_driver.obj (.text:ADC10_ISR)
+                  0000e900    00000008     EPD_hardware_gpio.obj (.text:EPD_IsBusy)
+                  0000e908    00000008     EPD_hardware_gpio.obj (.text:EPD_border_high)
+                  0000e910    00000008     EPD_hardware_gpio.obj (.text:EPD_border_low)
+                  0000e918    00000008     EPD_hardware_gpio.obj (.text:EPD_cs_high)
+                  0000e920    00000008     EPD_hardware_gpio.obj (.text:EPD_cs_low)
+                  0000e928    00000008     EPD_hardware_gpio.obj (.text:EPD_discharge_high)
+                  0000e930    00000008     EPD_hardware_gpio.obj (.text:EPD_discharge_low)
+                  0000e938    00000008     EPD_hardware_gpio.obj (.text:EPD_flash_cs_high)
+                  0000e940    00000008     EPD_hardware_gpio.obj (.text:EPD_flash_cs_low)
+                  0000e948    00000008     EPD_hardware_gpio.obj (.text:SPICLK_low)
+                  0000e950    00000008     EPD_hardware_gpio.obj (.text:SPIMOSI_low)
+                  0000e958    00000008     Mem_Flash.obj (.text:get_byte)
+                  0000e960    00000008     EPD_hardware_driver.obj (.text:get_current_time_tick)
+                  0000e968    00000006     EPD_hardware_gpio.obj (.text:EPD_Vcc_turn_off)
+                  0000e96e    00000006     EPD_hardware_gpio.obj (.text:EPD_Vcc_turn_on)
+                  0000e974    00000006     EPD_hardware_gpio.obj (.text:EPD_pwm_high)
+                  0000e97a    00000006     EPD_hardware_gpio.obj (.text:EPD_rst_high)
+                  0000e980    00000006     EPD_hardware_gpio.obj (.text:EPD_rst_low)
+                  0000e986    00000006     EPD_LED.obj (.text:LED_OFF)
+                  0000e98c    00000006     EPD_LED.obj (.text:LED_ON)
+                  0000e992    00000006     EPD_LED.obj (.text:LED_Trigger)
+                  0000e998    00000006     rts430_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  0000e99e    00000006     Uart_Controller.obj (.text:number_of_system_buffer)
+                  0000e9a4    00000006     EPD_Kit_Tool_Process.obj (.text:read_flash_handle)
+                  0000e9aa    00000006     Mem_Flash.obj (.text:send_byte)
+                  0000e9b0    00000006     EPD_hardware_driver.obj (.text:set_current_time_tick)
+                  0000e9b6    00000006     Mem_Flash.obj (.text:write_flash)
+                  0000e9bc    00000004     rts430_eabi.lib : pre_init.obj (.text:_system_pre_init)
+                  0000e9c0    00000004                     : exit.obj (.text:abort)
+
+.const     0    0000e9c4    0000036e     
+                  0000e9c4    000002f8     Char.obj (.const:ASCII_character_bitmaps)
+                  0000ecbc    0000003c     EPD_COG.obj (.const:COG_parameters)
+                  0000ecf8    00000030     EPD_COG.obj (.const:temperature_table)
+                  0000ed28    00000006     EPD_Kit_Tool_Process.obj (.const:.string)
+                  0000ed2e    00000004     EPD_COG.obj (.const:.string:SCAN_TABLE)
+
+.cinit     0    0000ed32    00000018     
+                  0000ed32    00000006     (.cinit..data.load) [load image]
+                  0000ed38    00000006     (__TI_handler_table)
+                  0000ed3e    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000ed42    00000008     (__TI_cinit_table)
+
+ADC10      0    0000ffea    00000002     
+                  0000ffea    00000002     EPD_hardware_driver.obj (.int05)
+
+USCIAB0TX 
+*          0    0000ffec    00000002     
+                  0000ffec    00000002     Uart_Driver.obj (.int06)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     Uart_Driver.obj (.int07)
+
+TIMER0_A1 
+*          0    0000fff0    00000002     
+                  0000fff0    00000002     EPD_hardware_driver.obj (.int08)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000ed42 records: 2, size/record: 4, table size: 8
+	.data: load addr=0000ed32, load size=00000006 bytes, run addr=00000306, run size=00000002 bytes, compression=copy
+	.bss: load addr=0000ed3e, load size=00000004 bytes, run addr=00000200, run size=00000106 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000ed38 records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+0000e8f8   ADC10_ISR
+0000e9c4   ASCII_character_bitmaps
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000e9c0   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+0000e62c   CMD_CE
+0000e30e   CMD_SE
+0000e060   COG_driver_EPDtype_select
+0000ecbc   COG_parameters
+00000056   DCOCTL
+0000e900   EPD_IsBusy
+0000dde0   EPD_Kit_Tool_process_init
+0000df7c   EPD_Kit_tool_process_task
+0000e968   EPD_Vcc_turn_off
+0000e96e   EPD_Vcc_turn_on
+0000e908   EPD_border_high
+0000e910   EPD_border_low
+0000e918   EPD_cs_high
+0000e920   EPD_cs_low
+0000e928   EPD_discharge_high
+0000e930   EPD_discharge_low
+0000dfc8   EPD_display_from_flash
+0000e56c   EPD_display_from_flash_Ex
+0000df2e   EPD_display_from_flash_prt
+0000e5bc   EPD_display_hardware_init
+0000e706   EPD_display_init
+0000d612   EPD_display_partialupdate
+0000e938   EPD_flash_cs_high
+0000e940   EPD_flash_cs_low
+0000e706   EPD_init
+0000d3a0   EPD_initialize_driver
+0000dede   EPD_initialize_gpio
+0000e76a   EPD_power_init
+0000cf34   EPD_power_off
+0000de36   EPD_power_on
+0000e974   EPD_pwm_high
+0000e8b8   EPD_pwm_low
+0000e97a   EPD_rst_high
+0000e980   EPD_rst_low
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000e8d0   Flash_cs_high
+0000e8da   Flash_cs_low
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000e986   LED_OFF
+0000e98c   LED_ON
+0000e992   LED_Trigger
+0000e8ee   LED_init
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+0000e212   PWM_run
+0000ed2e   SCAN_TABLE
+0000e948   SPICLK_low
+0000e872   SPIMISO_low
+0000e950   SPIMOSI_low
+0000e842   SPI_read
+0000e0f4   SPI_send
+0000e34a   SPI_send_byte
+0000e8c4   SPI_write
+0000e6ac   SPI_write_ex
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+0000e7fa   Timer_A0
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+0000e490   USCI0RX_ISR
+0000e3c0   USCI0TX_ISR
+00000120   WDTCTL
+00000400   __STACK_END
+00000020   __STACK_SIZE
+0000ed42   __TI_CINIT_Base
+0000ed4a   __TI_CINIT_Limit
+0000ed38   __TI_Handler_Table_Base
+0000ed3e   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00000001   __TI_args_main
+0000e80c   __TI_decompress_none
+0000e998   __TI_decompress_rle24
+00000001   __TI_exit
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000e7c0   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+0000e4e8   __mspabi_divi
+0000e252   __mspabi_divli
+0000e796   __mspabi_divu
+0000dd88   __mspabi_divul
+0000dadc   __mspabi_fixfi
+0000e0aa   __mspabi_fltlif
+0000e86e   __mspabi_func_epilog_1
+0000e86c   __mspabi_func_epilog_2
+0000e86a   __mspabi_func_epilog_3
+0000e868   __mspabi_func_epilog_4
+0000e866   __mspabi_func_epilog_5
+0000e864   __mspabi_func_epilog_6
+0000e862   __mspabi_func_epilog_7
+0000e7d4   __mspabi_mpyi
+0000e5e2   __mspabi_mpyl
+0000e4e8   __mspabi_remi
+0000e252   __mspabi_remli
+0000e796   __mspabi_remu
+0000dd88   __mspabi_remul
+0000e514   __mspabi_slli
+0000e53c   __mspabi_slli_1
+0000e52a   __mspabi_slli_10
+0000e528   __mspabi_slli_11
+0000e526   __mspabi_slli_12
+0000e524   __mspabi_slli_13
+0000e522   __mspabi_slli_14
+0000e520   __mspabi_slli_15
+0000e53a   __mspabi_slli_2
+0000e538   __mspabi_slli_3
+0000e536   __mspabi_slli_4
+0000e534   __mspabi_slli_5
+0000e532   __mspabi_slli_6
+0000e530   __mspabi_slli_7
+0000e52e   __mspabi_slli_8
+0000e52c   __mspabi_slli_9
+0000e308   __mspabi_slll_1
+0000e2e4   __mspabi_slll_10
+0000e2e0   __mspabi_slll_11
+0000e2dc   __mspabi_slll_12
+0000e2d8   __mspabi_slll_13
+0000e2d4   __mspabi_slll_14
+0000e2d0   __mspabi_slll_15
+0000e304   __mspabi_slll_2
+0000e300   __mspabi_slll_3
+0000e2fc   __mspabi_slll_4
+0000e2f8   __mspabi_slll_5
+0000e2f4   __mspabi_slll_6
+0000e2f0   __mspabi_slll_7
+0000e2ec   __mspabi_slll_8
+0000e2e8   __mspabi_slll_9
+0000e2ca   __mspabi_sral_1
+0000e2a6   __mspabi_sral_10
+0000e2a2   __mspabi_sral_11
+0000e29e   __mspabi_sral_12
+0000e29a   __mspabi_sral_13
+0000e296   __mspabi_sral_14
+0000e292   __mspabi_sral_15
+0000e2c6   __mspabi_sral_2
+0000e2c2   __mspabi_sral_3
+0000e2be   __mspabi_sral_4
+0000e2ba   __mspabi_sral_5
+0000e2b6   __mspabi_sral_6
+0000e2b2   __mspabi_sral_7
+0000e2ae   __mspabi_sral_8
+0000e2aa   __mspabi_sral_9
+0000e014   __mspabi_srli
+0000e05a   __mspabi_srli_1
+0000e036   __mspabi_srli_10
+0000e032   __mspabi_srli_11
+0000e02e   __mspabi_srli_12
+0000e02a   __mspabi_srli_13
+0000e026   __mspabi_srli_14
+0000e022   __mspabi_srli_15
+0000e056   __mspabi_srli_2
+0000e052   __mspabi_srli_3
+0000e04e   __mspabi_srli_4
+0000e04a   __mspabi_srli_5
+0000e046   __mspabi_srli_6
+0000e042   __mspabi_srli_7
+0000e03e   __mspabi_srli_8
+0000e03a   __mspabi_srli_9
+0000dccc   _auto_init
+0000e720   _c_int00
+0000e720   _c_int00_noexit
+0000fffe   _reset_vector
+000003e0   _stack
+0000e9bc   _system_pre_init
+0000e9c0   abort
+000002ea   address_offset
+ffffffff   binit
+0000026f   board_is_connected
+0000e608   data_controller_init
+0000e386   data_interface_init
+0000e462   data_transmit
+0000e780   delay_ms
+0000e1cc   erase_image
+0000e960   get_current_time_tick
+0000d804   get_custom_image_address
+0000c9e8   get_flash_image_info
+0000d56a   get_flash_mark_image_info
+0000d6b8   get_slideshow_image_address
+0000d94c   get_temperature
+000002f4   image_count
+0000e89c   initialize_temperature
+0000dbaa   is_flash_existed
+000002b9   line_count
+0000e752   main
+000002f6   mark_line
+0000e81e   memcpy
+000002f8   new_line
+0000e6ca   poll_system_packet_buffer
+000002fa   previous_lin
+0000e852   read_flash
+0000dd2a   read_slideshow_parameters
+000002fe   rest_data_count
+0000de8c   return_packets
+0000e830   return_system_packet_result
+0000e42e   return_system_packets
+0000d9dc   set_MCU_frequency
+0000e9b0   set_current_time_tick
+000002ff   slideshow_index
+000002da   slideshow_parameter
+0000e13c   spi_attach
+0000e6e8   spi_detach
+0000e13c   spi_init
+0000e66e   start_EPD_timer
+0000e8aa   stop_EPD_timer
+0000e780   sys_delay_ms
+0000e184   system_init
+0000ecf8   temperature_table
+000002ca   tx_buf
+0000d118   write_ascii
+0000e9b6   write_flash
+000002de   write_flash_address
+0000e540   write_mark
+0000db44   write_slideshow_parameters
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000020   __STACK_SIZE
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+0000026f   board_is_connected
+000002b9   line_count
+000002ca   tx_buf
+000002da   slideshow_parameter
+000002de   write_flash_address
+000002ea   address_offset
+000002f4   image_count
+000002f6   mark_line
+000002f8   new_line
+000002fa   previous_lin
+000002fe   rest_data_count
+000002ff   slideshow_index
+000003e0   _stack
+00000400   __STACK_END
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c9e8   get_flash_image_info
+0000cf34   EPD_power_off
+0000d118   write_ascii
+0000d3a0   EPD_initialize_driver
+0000d56a   get_flash_mark_image_info
+0000d612   EPD_display_partialupdate
+0000d6b8   get_slideshow_image_address
+0000d804   get_custom_image_address
+0000d94c   get_temperature
+0000d9dc   set_MCU_frequency
+0000dadc   __mspabi_fixfi
+0000db44   write_slideshow_parameters
+0000dbaa   is_flash_existed
+0000dccc   _auto_init
+0000dd2a   read_slideshow_parameters
+0000dd88   __mspabi_divul
+0000dd88   __mspabi_remul
+0000dde0   EPD_Kit_Tool_process_init
+0000de36   EPD_power_on
+0000de8c   return_packets
+0000dede   EPD_initialize_gpio
+0000df2e   EPD_display_from_flash_prt
+0000df7c   EPD_Kit_tool_process_task
+0000dfc8   EPD_display_from_flash
+0000e014   __mspabi_srli
+0000e022   __mspabi_srli_15
+0000e026   __mspabi_srli_14
+0000e02a   __mspabi_srli_13
+0000e02e   __mspabi_srli_12
+0000e032   __mspabi_srli_11
+0000e036   __mspabi_srli_10
+0000e03a   __mspabi_srli_9
+0000e03e   __mspabi_srli_8
+0000e042   __mspabi_srli_7
+0000e046   __mspabi_srli_6
+0000e04a   __mspabi_srli_5
+0000e04e   __mspabi_srli_4
+0000e052   __mspabi_srli_3
+0000e056   __mspabi_srli_2
+0000e05a   __mspabi_srli_1
+0000e060   COG_driver_EPDtype_select
+0000e0aa   __mspabi_fltlif
+0000e0f4   SPI_send
+0000e13c   spi_attach
+0000e13c   spi_init
+0000e184   system_init
+0000e1cc   erase_image
+0000e212   PWM_run
+0000e252   __mspabi_divli
+0000e252   __mspabi_remli
+0000e292   __mspabi_sral_15
+0000e296   __mspabi_sral_14
+0000e29a   __mspabi_sral_13
+0000e29e   __mspabi_sral_12
+0000e2a2   __mspabi_sral_11
+0000e2a6   __mspabi_sral_10
+0000e2aa   __mspabi_sral_9
+0000e2ae   __mspabi_sral_8
+0000e2b2   __mspabi_sral_7
+0000e2b6   __mspabi_sral_6
+0000e2ba   __mspabi_sral_5
+0000e2be   __mspabi_sral_4
+0000e2c2   __mspabi_sral_3
+0000e2c6   __mspabi_sral_2
+0000e2ca   __mspabi_sral_1
+0000e2d0   __mspabi_slll_15
+0000e2d4   __mspabi_slll_14
+0000e2d8   __mspabi_slll_13
+0000e2dc   __mspabi_slll_12
+0000e2e0   __mspabi_slll_11
+0000e2e4   __mspabi_slll_10
+0000e2e8   __mspabi_slll_9
+0000e2ec   __mspabi_slll_8
+0000e2f0   __mspabi_slll_7
+0000e2f4   __mspabi_slll_6
+0000e2f8   __mspabi_slll_5
+0000e2fc   __mspabi_slll_4
+0000e300   __mspabi_slll_3
+0000e304   __mspabi_slll_2
+0000e308   __mspabi_slll_1
+0000e30e   CMD_SE
+0000e34a   SPI_send_byte
+0000e386   data_interface_init
+0000e3c0   USCI0TX_ISR
+0000e42e   return_system_packets
+0000e462   data_transmit
+0000e490   USCI0RX_ISR
+0000e4e8   __mspabi_divi
+0000e4e8   __mspabi_remi
+0000e514   __mspabi_slli
+0000e520   __mspabi_slli_15
+0000e522   __mspabi_slli_14
+0000e524   __mspabi_slli_13
+0000e526   __mspabi_slli_12
+0000e528   __mspabi_slli_11
+0000e52a   __mspabi_slli_10
+0000e52c   __mspabi_slli_9
+0000e52e   __mspabi_slli_8
+0000e530   __mspabi_slli_7
+0000e532   __mspabi_slli_6
+0000e534   __mspabi_slli_5
+0000e536   __mspabi_slli_4
+0000e538   __mspabi_slli_3
+0000e53a   __mspabi_slli_2
+0000e53c   __mspabi_slli_1
+0000e540   write_mark
+0000e56c   EPD_display_from_flash_Ex
+0000e5bc   EPD_display_hardware_init
+0000e5e2   __mspabi_mpyl
+0000e608   data_controller_init
+0000e62c   CMD_CE
+0000e66e   start_EPD_timer
+0000e6ac   SPI_write_ex
+0000e6ca   poll_system_packet_buffer
+0000e6e8   spi_detach
+0000e706   EPD_display_init
+0000e706   EPD_init
+0000e720   _c_int00
+0000e720   _c_int00_noexit
+0000e752   main
+0000e76a   EPD_power_init
+0000e780   delay_ms
+0000e780   sys_delay_ms
+0000e796   __mspabi_divu
+0000e796   __mspabi_remu
+0000e7c0   __TI_zero_init
+0000e7d4   __mspabi_mpyi
+0000e7fa   Timer_A0
+0000e80c   __TI_decompress_none
+0000e81e   memcpy
+0000e830   return_system_packet_result
+0000e842   SPI_read
+0000e852   read_flash
+0000e862   __mspabi_func_epilog_7
+0000e864   __mspabi_func_epilog_6
+0000e866   __mspabi_func_epilog_5
+0000e868   __mspabi_func_epilog_4
+0000e86a   __mspabi_func_epilog_3
+0000e86c   __mspabi_func_epilog_2
+0000e86e   __mspabi_func_epilog_1
+0000e872   SPIMISO_low
+0000e89c   initialize_temperature
+0000e8aa   stop_EPD_timer
+0000e8b8   EPD_pwm_low
+0000e8c4   SPI_write
+0000e8d0   Flash_cs_high
+0000e8da   Flash_cs_low
+0000e8ee   LED_init
+0000e8f8   ADC10_ISR
+0000e900   EPD_IsBusy
+0000e908   EPD_border_high
+0000e910   EPD_border_low
+0000e918   EPD_cs_high
+0000e920   EPD_cs_low
+0000e928   EPD_discharge_high
+0000e930   EPD_discharge_low
+0000e938   EPD_flash_cs_high
+0000e940   EPD_flash_cs_low
+0000e948   SPICLK_low
+0000e950   SPIMOSI_low
+0000e960   get_current_time_tick
+0000e968   EPD_Vcc_turn_off
+0000e96e   EPD_Vcc_turn_on
+0000e974   EPD_pwm_high
+0000e97a   EPD_rst_high
+0000e980   EPD_rst_low
+0000e986   LED_OFF
+0000e98c   LED_ON
+0000e992   LED_Trigger
+0000e998   __TI_decompress_rle24
+0000e9b0   set_current_time_tick
+0000e9b6   write_flash
+0000e9bc   _system_pre_init
+0000e9c0   C$$EXIT
+0000e9c0   abort
+0000e9c4   ASCII_character_bitmaps
+0000ecbc   COG_parameters
+0000ecf8   temperature_table
+0000ed2e   SCAN_TABLE
+0000ed38   __TI_Handler_Table_Base
+0000ed3e   __TI_Handler_Table_Limit
+0000ed42   __TI_CINIT_Base
+0000ed4a   __TI_CINIT_Limit
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[303 symbols]
